@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Creative Portfolio</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <script src="https://kit.fontawesome.com/a2d9d5b2a1.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<link rel="icon" href="images/favicon.ico" sizes="256x256" type="image/x-icon">
+
+  <style>
+    :root {
+  --bg: #0e0e12;
+  --card-bg: #1a1b22;
+  --text: #e3e3e3;
+  --accent: #00bfff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 950px;
+  width: 100%;
+}
+
+/* ===== PROFILE ===== */
+.profile {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease forwards;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 25px rgba(0,191,255,0.5);
+  animation: float 3s ease-in-out infinite;
+}
+.info h1 {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+.bio {
+  color: #9ba1a6;
+  margin-top: .5rem;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  margin-bottom: 3rem;
+  animation: fadeUp 1.2s ease forwards;
+}
+h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+/* ===== PORTFOLIO ===== */
+.portfolio-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.portfolio-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #1f2025;
+}
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #1f2530, #0b1823);
+  box-shadow: 0 0 20px rgba(0,191,255,0.3);
+}
+.portfolio-card i {
+  font-size: 2rem;
+  margin-bottom: .7rem;
+  color: var(--accent);
+}
+
+/* ===== LINKS ===== */
+.link-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.3rem;
+  border-radius: 10px;
+  background: var(--card-bg);
+  border: 1px solid #1f2025;
+  transition: all 0.3s ease;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+
+}
+.btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ===== SOCIALS ===== */
+.social-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.btn.insta:hover { background: radial-gradient(circle at 30% 107%, #f58529, #dd2a7b, #8134af); }
+.btn.twitter:hover { background: #1da1f2; }
+.btn.facebook:hover { background: #1877f2; }
+.btn.linkedin:hover { background: #0a66c2; }
+.btn.behance:hover { background: #0057ff; }
+.btn.discord:hover { background: #5865f2; }
+.btn.threads:hover { background: #000; }
+.btn.pinterest:hover { background: #e60023; }
+.btn.gmail:hover { background: #d93025; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(40px);}
+  to {opacity:1; transform: translateY(0);}
+}
+@keyframes float {
+  0%,100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  .bio { font-size: 0.9rem; }
+  .btn { font-size: 0.85rem; padding: 0.6rem 1rem; }
+}
+
+.social-grid .btn i {
+  color: #fff !important;
+}
+
+ .icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(0, 191, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--accent);
+}
+
+.icon-circle img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) saturate(100%) invert(52%) sepia(97%) saturate(2268%) hue-rotate(166deg) brightness(102%) contrast(103%);
+}
+
+
+
+
+
+/* Remove any leftover underline and color override */
+.portfolio-card h3,
+.portfolio-card p {
+  color: var(--text);
+  text-decoration: none !important;
+}
+
+.portfolio-card p {
+  color: #ccc !important;
+}
+
+.portfolio-card {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Ensure 4 cards in one row when screen is wide enough */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* Responsive — stack on smaller screens */
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- PROFILE SECTION -->
+    <header class="profile">
+      <img src="avatar.jpg" alt="Profile Avatar" class="avatar" />
+      <div class="info">
+        <h1>@<span style="color: #00bfff; " >Edit</span><span style="color: #fff; ">IQ</span><span class="text-foreground" style="color: yellow; ">.</span></h1>
+        <p class="bio">Make Every Scroll Stop With Stunning Thumbnails</p>
+      </div>
+    </header>
+
+    <!-- PORTFOLIO LINKS -->
+<section class="portfolio">
+  <h2>My Portfolio</h2>
+  <div class="portfolio-grid">
+
+    <a href="https://your-portfolio-link.com" target="_blank" class="portfolio-card" style="text-decoration:none; color:inherit;">
+      <div class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/281/281190.png" alt="My Portfolio Logo">
+        <!-- <i class="fa-light fa-gamepad-modern"></i> -->
+      </div>
+      <h3>My Portfolio</h3>
+      <p>Creative and modern projects</p>
+    </a>
+
+    <a href="https://your-old-work-link.com" target="_blank" class="portfolio-card" style="text-decoration:none; color:inherit;">
+      <div class="icon-circle">
+        <img src="  https://cdn-icons-png.flaticon.com/512/1736/1736602.png" alt="Old Logo">
+      </div>
+      <h3>Old</h3>
+      <p>Previous works and archived designs</p>
+    </a>
+
+    <a href="https://your-gaming-link.com" target="_blank" class="portfolio-card" style="text-decoration:none; color:inherit;">
+      <div class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/13/13973.png " alt="Gaming Logo">
+      </div>
+      <h3>Gaming</h3>
+      <p>Game-related thumbnails and edits</p>
+    </a>
+
+    <a href="https://your-roblox-link.com" target="_blank" class="portfolio-card" style="text-decoration:none; color:inherit;">
+      <div class="icon-circle">
+        <img src="  https://cdn-icons-png.flaticon.com/512/18085/18085944.png" alt="Roblox Logo">
+      </div>
+      <h3>Roblox</h3>
+      <p>Creative Roblox thumbnails and assets</p>
+    </a>
+
+  </div>
+</section>
+
+
+
+    
+
+    <!-- SOCIAL LINKS -->
+    <section class="socials">
+  <h2>Connect with Me</h2>
+  <div class="social-grid">
+    <a href="#" class="btn insta"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="#" class="btn twitter"><i class="fab fa-x-twitter"></i> Twitter</a>
+    <a href="#" class="btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+    <a href="#" class="btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <a href="#" class="btn behance"><i class="fab fa-behance"></i> Behance</a>
+    <a href="#" class="btn discord"><i class="fab fa-discord"></i> Discord</a>
+    <a href="#" class="btn threads"><i class="fab fa-threads"></i> Threads</a>
+    <a href="#" class="btn pinterest"><i class="fab fa-pinterest"></i> Pinterest</a>
+    <a href="mailto:example@gmail.com" class="btn gmail"><i class="fas fa-envelope"></i> Gmail</a>
+  </div>
+</section>
+
+    <!-- MY LINKS -->
+    <section class="links">
+      <h2>My Projects</h2>
+      <div class="link-grid">
+        <a href="#" class="btn project"><i class="fas fa-file-invoice"></i> Invoice Maker</a>
+        <a href="#" class="btn project"><i class="fas fa-image"></i> Thumbnail Checker</a>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Add fade-in when scrolling
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  const trigger = window.innerHeight * 0.85;
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < trigger) sec.classList.add("visible");
+  });
+});
+
+    
+  </script>
+</body>
+</html>
